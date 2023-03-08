@@ -1,0 +1,153 @@
+/* <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>*/
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  /*text*/
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+  /*Background gradient:*/
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  /*Dividers*/
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh; /*这个设置让body 显示满屏 ，而不会在下面露出半截白色的空间*/
+  width: 100vw;
+  font-family: "Kumbh Sans", sans-serif;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%)) no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  background-attachment: fixed;
+}
+
+main {
+  max-width: 1050px;
+  margin: 0 auto; /*这一步让整个中间的方块内容显示在屏幕的中间*/
+padding: 0 2rem;
+}
+.wrapper {
+  background-color: white;
+  border-radius: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+
+  align-items: center;
+  column-gap: 3rem;
+  margin: 2rem; /*一设置这个，当你缩小屏幕的时候，内容不会完全贴在边上，会有空隙*/
+}
+
+.image-wrapper {
+  background-image: url(./images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 180% 80%;
+  background-size: 40rem 40rem;
+  
+}
+
+
+.image-wrapper .woman {
+  position: relative;
+  top: 5rem; /* 这里不可以用margin-top！ 把image-wrapper撑大了，所以要注意！*/
+  right: 2rem;
+}
+
+.image-wrapper .box {
+  position: relative;
+  right: 5rem;
+  bottom: 10rem;
+}
+
+.accordion-wrapper {
+  padding-right: 3rem;
+ 
+  
+}
+.accordion-wrapper h1 {
+  margin-bottom: 1rem;
+  color: var(--Very-dark-desaturated-blue);
+  font-weight: 700;
+}
+.accordion-wrapper p {
+  font-weight: 400;
+  color: var(--Very-dark-grayish-blue);
+}
+hr {
+  border-top: 1px solid var(--Light-grayish-blue);
+}
+
+.accordion-question-answer {
+  margin: 0.5rem 0;
+  
+}
+
+.accordion-question-answer .question {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.active, .accordion-question-answer .question:hover{
+    
+    color: var(--Soft-red);
+    cursor: pointer;
+}
+.bold, .accordion-question-answer .question p::after{
+  font-weight: bold;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+.accordion-question-answer .answer{
+    display: none;
+}
+.accordion-question-answer .answer p{
+    color:var(--Dark-grayish-blue);
+}
+
+@media only screen and (max-width: 768px){
+  main{
+    margin:1rem;
+  }
+  .wrapper{
+    display:flex;
+     flex-direction: column;
+     padding: 20px;
+     text-align: center;
+     
+  }
+ 
+  
+  .accordion-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin-top:-2rem;
+  }
+  
+    
+.accordion-question-answer .answer{
+  text-align: left;
+}
+  
+
+    
+  }
+  
